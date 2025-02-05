@@ -63,6 +63,7 @@ import ElementLinkDialog from "./ElementLinkDialog";
 
 import "./LayerUI.scss";
 import "./Toolbar.scss";
+import Timer from "./Timer";
 
 interface LayerUIProps {
   actionManager: ActionManager;
@@ -343,6 +344,9 @@ const LayerUI = ({
                 userToFollow={appState.userToFollow?.socketId || null}
               />
             )}
+            <div style={{marginTop: '5px', marginRight: '5px'}}>
+              <Timer />
+            </div>
             {renderTopRightUI?.(device.editor.isMobile, appState)}
             {!appState.viewModeEnabled &&
               appState.openDialog?.name !== "elementLinkSelector" &&
